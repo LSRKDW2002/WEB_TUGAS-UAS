@@ -1,0 +1,323 @@
+:root
+{
+    --green : #13470c;
+    --dark-green : #143513;
+    --limegreen : #00ff00;
+    --white : #fff;
+    --yellow : #fcfe00;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Pixeloid', sans-serif;
+}
+
+@font-face {
+    font-family: 'Pixeloid';
+    src: url(fonts/pixeloid-font/PixeloidMono-1G8ae.ttf);
+}
+
+body
+{
+    background-color: var(--dark-green);
+    color : var(--white);
+}
+
+header
+{
+    text-align: center;
+    background-color: var(--green);
+    position: fixed;
+    width: 100%;
+    font-weight: bold;
+    padding: 3%;
+    top: 0;
+}
+
+
+.title
+{
+    text-align: center;
+    color: var(--limegreen);
+    border-bottom: 1px solid var(--yellow);
+    font-size: 35pt;
+}
+
+nav
+{
+    margin-top: 15px;
+}
+
+nav ul
+{
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+nav ul li a
+{
+    color: var(--yellow);
+}
+
+nav ul li a:hover
+{
+    border-bottom: 3px solid var(--limegreen);
+}
+
+.slider
+{
+    margin-top: 10%;
+    display: block;
+    margin-left: 350px;
+    width: 65%;
+}
+
+.slider h4
+{
+    margin-top: 20%;
+}
+
+.slides
+{
+    display: flex;
+    width: 50rem;
+    overflow: hidden;
+}
+
+.slides img 
+{
+    border-radius: 10px;
+}
+
+.slide
+{
+    width: 50rem;
+    transition: .5s;
+}
+
+.choose_1:checked ~ .slides > .s1
+{
+    margin-left: -0rem;
+}
+
+.choose_2:checked ~ .slides > .s1
+{
+    margin-left: -50rem;
+}
+
+.choose_3:checked ~ .slides > .s1
+{
+    margin-left: -100rem;
+}
+
+.overlay 
+{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target 
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup 
+{
+    margin: 70px auto;
+    padding: 20px;
+    background: var(--dark-green);
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+  
+.popup h2 {
+    margin-top: 0;
+    color: var(--limegreen);
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.popup .close:hover 
+{
+    color: #00ff00;
+}
+
+.content 
+{
+    font-size: 13px;
+    color: var(--yellow);
+    max-height: 30%;
+}
+.judul-produk{
+
+    color: white;
+}
+.judul-produk:hover{
+    color: #00ff00;
+}
+.pesan{
+    color: white;
+}
+.pesan:hover{
+    color: #00ff00;
+}
+.populer
+{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 12pt;
+    text-align: center;
+}
+
+.populer img
+{
+    border-radius: 10px;
+    
+}
+
+.populer button{
+    background-color: var(--limegreen);
+    color: var(--green);
+    border-radius: 5px;
+}
+
+.voucher
+{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 12pt;
+    text-align: center;
+}
+
+.voucher img
+{
+    border-radius: 10px;
+    
+}
+
+.voucher button{
+    background-color: var(--limegreen);
+    color: var(--green);
+    border-radius: 5px;
+}
+
+.tentang
+{
+    display: grid;
+    justify-content: center;
+    margin-top: 10%;
+    font-size: 15pt;
+}
+ 
+.card
+{
+    background-color: var(--green);
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 20px 20px black;
+}
+ 
+.card h1
+{
+    text-align: center;
+}
+ 
+html
+{
+    scroll-behavior: smooth;
+}
+ 
+ 
+footer
+{
+    display: grid;
+    justify-content: center;
+    background-color: var(--green);
+    margin-top: 10%;
+    padding: 2%;
+}
+ 
+.sosmed img 
+{
+    width: 50px;
+    padding-left: 5pt;
+}
+ 
+#copyright
+{
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .title{
+        text-align: center;
+        color: var(--limegreen);
+        border-bottom: 1px solid var(--yellow);
+        font-size: 17pt;
+    }
+    nav ul li a{
+        font-size: 11pt;
+    }
+    .slider{
+        display: none;
+    }
+    .title-p{
+        padding-top: 8rem;
+        margin-left: 0;
+    }
+    .populer{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .voucher{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .link img{
+        width: 85%;
+    }
+    .tentang{
+        width: 90%;
+        padding-left: 1.75rem;
+        font-size: 13pt;
+    }
+    .sosmed{
+        font-size: 8;
+        padding-left: 8rem;
+    }
+    .sosmed img{
+        width: 10%;
+        padding-left: 12pt;
+    }
+}
